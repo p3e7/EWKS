@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%% Präambel-ANFANG
+% Die folgenden Zeilen zwischen Präambel-ANFANG und Präambel-ENDE bitte nicht ändern.
+
+% Das Latex-Dokument beginnt mit dem \documentclass-Befehl, welcher eine angepasste Version der ACM sig-alternate-Klasse (ewks-latex) referenziert. Die Datei ewks-latex.cls muss sich im gleichen Verzeichnis wie die Zusammenfassung befinden.
+\documentclass[ngerman]{ewks-latex}
+
+% Anpassungen an die deutsche Sprache.
+\usepackage[ngerman]{babel}
+
+% Angaben zu Zeichensätzen (unter anderem ist Nutzung deutscher Umlaute möglich).
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Entfernung von für den Copyright-Hinweis der Konferenz reserviertem Platz in der ersten Spalte.
+\usepackage{etoolbox}
+\usepackage{color}
+
+\newcommand{\todo}[2]{\textcolor{red}{\underline{\textbf{TODO [#1]}} \\ #2}}
+
+\makeatletter
+\patchcmd{\maketitle}{\@copyrightspace}{}{}{}
+\makeatother
+
+% Anzahl der Autoren der Zusammenfassung (in diesem Semester zwei Studenten).
+\numberofauthors{2}
+
+%%%%%%%%%%%%%%%% Präambel-ENDE
+
+
+% Das listings-Paket kann zum Setzen von Quellcode verwendet werden. Es kann auch entfernt werden, falls kein Quellcode gesetzt werden muss.
+\usepackage{listings}
+
+% Start des Dokuments.
+\begin{document}
+
+% Angabe des *englischen* Titels des Papers.
+% Bitte das Tag <TITEL DES ORIGINALS> entsprechend ersetzen.
+\title{<TITEL DES ORIGINALS>}
+
+% Als Untertitel sollte darauf hingewiesen werden, dass es sich um eine Zusammenfassung des Papers der jeweiligen Konferenz inkl. Jahrgang handelt.
+% Bitte das Tag <JAHRGANG> entsprechend ersetzen.
+\subtitle{Zusammenfassung des auf der <KONFERENZNAME> <JAHRGANG> veröffentlichten, gleichnamigen Papers}
+
+% Angaben zu den Autoren der *Zusammenfassung*.
+% Bitte die Tags <VORNAMEx>, <NAMEx>, <MATRIKELNRx>, <EMAILx> durch die eigenen Angaben ersetzen.
+\author{
+	% Erster Autor (i. d. R. der Corresponding Author, der auch die Mail zur Gruppenanmeldung und Papier-Auswahl verfasst hat).
+	\alignauthor
+	<VORNAME1> <NAME1>\\
+	\affaddr{Fachhochschule Dortmund, Fachbereich Informatik}\\
+    \affaddr{<MATRIKELNR1>}\\
+    \email{<EMAIL1>@stud.fh-dortmund.de}    
+	% Zweiter Autor (diese Kommentarzeile nicht entfernen!)
+	\alignauthor
+	<VORNAME2> <NAME2>\\
+	\affaddr{Fachhochschule Dortmund, Fachbereich Informatik}\\
+    \affaddr{<MATRIKELNR2>}\\
+    \email{<EMAIL2>@stud.fh-dortmund.de}    
+}
+
+% Titel setzen. Dieser Befehl sollte an dieser Stelle belassen werden und vor dem eigentlichen Text auftauchen.
+\maketitle
+
+\section{Abstract}
+Domänen spezifische Modellierungssprachen, wie ECore, ermöglichen die Beschreibung eines Sachverhaltes mit anschließender Codegenerierung. ECore wird in XML beschrieben und speichert Entitäten mit ihren Verbindungen. 
+
+% Das Paper wie auch die Zusammenfassung gliedern sich in mehrere Abschnitte (\section-Befehl). Der erste Abschnitt sollte der Einleitung (Introduction) vorbehalten sein und eine Spalte nicht überschreiten.
+\section{Einleitung (Blindtext)}
+% Der folgende Befehl generiert Blindtext für die Einleitung und kann entfernt werden.
+\cite{latex}
+
+\todo{Sascha}{Vordefiniertes Listing erstellen \\Abstract fertigstellen}
+\begin{lstlisting}[float, caption=Beispiel eines Java-Listings, label=lst:example, language=java, basicstyle=\small, tabsize=4, showstringspaces=false, numbers=left, frame=single, keywordstyle=\bfseries]
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hallo Welt");
+	}
+}
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%% Epilog-ANFANG
+% Die folgenden Zeilen zwischen Epilog-ANFANG und Epilog-ENDE bitte nicht ändern.
+
+% Neue Seite für das Literaturverzeichnis
+\newpage
+
+% Der voreingestellte BibTeX-Stil ist abbrv und sollte nicht geändert werden. Er führt dazu, dass die Quellenverweise durchnummeriert werden, was die Regel für wissenschaftliche Veröffentlichungen in den Naturwissenschaften ist.
+\bibliographystyle{abbrv}
+%%%%%%%%%%%%%%%% Epilog-ENDE
+
+% Verweis auf die BibTeX-Datei. Diese sollte im gleichen Ordner wie die tex-Datei liegen. ACHTUNG: Der Dateiname ist ohne die Endung .bib anzugeben.
+\bibliography{literatur}
+\end{document}

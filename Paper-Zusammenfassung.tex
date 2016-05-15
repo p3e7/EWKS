@@ -1,0 +1,194 @@
+%%%%%%%%%%%%%%%% Präambel-ANFANG
+% Die folgenden Zeilen zwischen Präambel-ANFANG und Präambel-ENDE bitte nicht ändern.
+
+% Das Latex-Dokument beginnt mit dem \documentclass-Befehl, welcher eine angepasste Version der ACM sig-alternate-Klasse (ewks-latex) referenziert. Die Datei ewks-latex.cls muss sich im gleichen Verzeichnis wie die Zusammenfassung befinden.
+\documentclass[ngerman]{ewks-latex}
+
+% Anpassungen an die deutsche Sprache.
+\usepackage[ngerman]{babel}
+
+% Angaben zu Zeichensätzen (unter anderem ist Nutzung deutscher Umlaute möglich).
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Ohne dieses Package können keine eps Bilder angezeigt werden
+\usepackage{epstopdf}
+
+% Entfernung von für den Copyright-Hinweis der Konferenz reserviertem Platz in der ersten Spalte.
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\maketitle}{\@copyrightspace}{}{}{}
+\makeatother
+
+% Anzahl der Autoren der Zusammenfassung (in diesem Semester zwei Studenten).
+\numberofauthors{2}
+
+%%%%%%%%%%%%%%%% Präambel-ENDE
+
+% Das lipsum-Paket wird für die Generierung von Blindtext in dieser Beispieldatei verwendet und kann aus der tatsächlichen Abgabe entfernt werden.
+\usepackage{lipsum}
+
+% Das listings-Paket kann zum Setzen von Quellcode verwendet werden. Es kann auch entfernt werden, falls kein Quellcode gesetzt werden muss.
+\usepackage{listings}
+
+% Start des Dokuments.
+\begin{document}
+
+% Angabe des *englischen* Titels des Papers.
+% Bitte das Tag <TITEL DES ORIGINALS> entsprechend ersetzen.
+\title{<TITEL DES ORIGINALS>}
+
+% Als Untertitel sollte darauf hingewiesen werden, dass es sich um eine Zusammenfassung des Papers der jeweiligen Konferenz inkl. Jahrgang handelt.
+% Bitte das Tag <JAHRGANG> entsprechend ersetzen.
+\subtitle{Zusammenfassung des auf der <KONFERENZNAME> <JAHRGANG> veröffentlichten, gleichnamigen Papers}
+
+% Angaben zu den Autoren der *Zusammenfassung*.
+% Bitte die Tags <VORNAMEx>, <NAMEx>, <MATRIKELNRx>, <EMAILx> durch die eigenen Angaben ersetzen.
+\author{
+	% Erster Autor (i. d. R. der Corresponding Author, der auch die Mail zur Gruppenanmeldung und Papier-Auswahl verfasst hat).
+	\alignauthor
+	<Peter> <S>\\
+	\affaddr{Fachhochschule Dortmund, Fachbereich Informatik}\\
+    \affaddr{<MATRIKELNR1>}\\
+    \email{ps@fh-dortmund.de}    
+	% Zweiter Autor (diese Kommentarzeile nicht entfernen!)
+	\alignauthor
+	<Sascha> <D>\\
+	\affaddr{Fachhochschule Dortmund, Fachbereich Informatik}\\
+    \affaddr{<MATRIKELNR2>}\\
+    \email{<EMAIL2>@stud.fh-dortmund.de}    
+}
+
+% Titel setzen. Dieser Befehl sollte an dieser Stelle belassen werden und vor dem eigentlichen Text auftauchen.
+\maketitle
+
+% Das Paper wie auch die Zusammenfassung gliedern sich in mehrere Abschnitte (\section-Befehl). Der erste Abschnitt sollte der Einleitung (Introduction) vorbehalten sein und eine Spalte nicht überschreiten.
+\section{Einleitung (Blindtext)}
+% Der folgende Befehl generiert Blindtext für die Einleitung und kann entfernt werden.
+\lipsum[1-4]
+
+\section{Hinweise zu den folgenden Abschnitten}
+Nach der Einleitung sollte in den folgenden Abschnitten der Inhalt des Papers vorgestellt werden. Die Einteilung der Abschnitte kann sich dabei am Paper orientieren.
+
+\section{Hinweise zur Formatierung}
+Ein paar Beispiele zur Formatierung von Text:
+\begin{enumerate}
+\item \textit{kursiv}
+\item \textbf{fett}
+\item \texttt{Code}
+\end{enumerate}
+
+\section{Tabellen}
+\begin{table} % Einleitung der Tabelle
+\centering % Überschrift zentriert
+\caption{Ein paar Java-Schlüsselwörter} % Überschrift
+\label{tab:example} % Label für spätere Referenzierung per \ref
+\begin{tabular}{|c|c|} \hline % Einleitung des Tabelleninhalts
+Schlüsselwort & Bedeutung \\ \hline % Zeile 1; Spaltentrennung per &
+\texttt{abstract} & Abstrakte Klasse/Methode \\ \hline % Zeile 2
+\texttt{class} & Einleitung einer Klasse \\ \hline % Zeile 3
+\texttt{throw} & Exception werfen \\ \hline % Zeile 4
+\end{tabular}
+\end{table}
+
+Tabellen lassen sich mit Hilfe der \texttt{table}- und \texttt{tabular}-Umgebungen setzen. Als Beispiel für eine konkrete Anwendung siehe Tabelle \ref{tab:example}.
+
+Warum ist meine Tabelle nicht dort, wo ich sie definiert habe? Weil die Vorlage den "`floating"'-Modus von \LaTeX verwendet und Tabellen, Abbildungen und andere Elemente so anordnet, dass wenig Leerzeilen entstehen.
+
+Die Positionierung der Elemente sollte dabei nicht manuell geändert werden, außer es handelt sich um doppespaltige Tabellen, Abbildungen etc. Ein Beispiel für ein doppelspaltiges Element zeigt Abbildung \ref{fig:doppelspaltig}.
+
+Doppelspaltige Elemente werden durch Varianten der einleitenden Befehle mit dem Suffix "`*"' gesetzt:
+\begin{itemize}
+\item Tabellen: \texttt{begin\{table*\}}
+\item Abbildungen (siehe Abschnitt \ref{sec:figures}): \texttt{begin\{figure*\}}
+\end{itemize}
+
+\section{Abbildungen}
+\label{sec:figures}
+Abbildungen werden durch die \texttt{figure}-Umgebung gesetzt. Als Format empfiehlt sich PostScript (ps) oder Encapsulated PostScript (eps).
+
+\begin{figure}
+\centering
+\epsfig{file=Quadrat.eps,height=1in,width=1in}
+\caption{Ein einspaltiges graues Quadrat (eps-Format).}
+\end{figure}
+
+\begin{figure*}
+\centering
+\epsfig{file=Quadrat.eps,height=1in,width=1in}
+\caption{Ein doppelspaltiges graues Quadrat (eps-Format).}
+\label{fig:doppelspaltig}
+\end{figure*}
+
+\section{Verweise}
+Mit Hilfe von \LaTeX \ lassen sich eine Reihe von Verweisen auf weiterführende Informationen nutzen.
+
+Die wichtigste "`Verweistechnik"' ist der Literaturverweis. Der Befehl für einen Literaturverweis lautet \texttt{\textbackslash cite\{<Bib\TeX-MARKE>\}}. \texttt{<Bib\TeX-MARKE>} ist dabei durch die jeweilige Bib\TeX-Marke zu ersetzen. Bei Bib\TeX \ handelt es sich um ein Programm, mit dem sich Literaturverweise definieren lassen. Es bietet eine Anbindung an \LaTeX. Ein Beispiel für eine Bib\TeX-Datei ist "`literatur.bib"', die sich im selben Verzeichnis wie diese \texttt{.tex}-Datei befinden sollte. Der Befehl \texttt{\textbackslash cite\{latex\}} führt dann zu folgender Ausgabe: \cite{latex}.
+
+Die Bib\TeX-Datei "`literatur.bib"' können Sie entweder mit einem Texteditor anpassen oder Sie nutzen ein Tool wie JabRef\footnote{\texttt{http://jabref.sourceforge.net}}. Fußnoten setzt man übrigens mit \texttt{\textbackslash footnote\{\}}.
+
+\section{Formeln}
+Eine große Stärke von \LaTeX \ ist das Setzen von Formeln. Formeln können \textit{inline} gesetzt werden, d. h. sie erscheinen im Fließtext: $\lim_{n\rightarrow \infty}x=0$.
+
+Formeln werden entweder in zwei \$...\$ eingeschlossen (Kurzform) oder sind von \texttt{\textbackslash begin\{$x$\}}...\texttt{\textbackslash end\{$x$\}} umgeben mit $x\in\left\{ \mathtt{math\textrm{,}\:\mathtt{equation\textrm{,}\: displaymath}}\right\}$ (Langform).
+
+Formeln können auch in abgesetzter Form erscheinen, undzwar...
+\begin{itemize}
+\item ... nummeriert (\texttt{equation}-Umgebung):
+\begin{equation}
+{n+1\choose k} = {n\choose k} + {n \choose k-1}
+\end{equation}
+
+\item ... nicht-nummeriert (\texttt{displaymath}-Umgebung):
+\begin{displaymath}
+|x| = \left\{ \begin{array}{rl}
+ -x &\mbox{ falls $x<0$} \\
+  x &\mbox{ sonst}
+       \end{array} \right.
+\end{displaymath}
+\end{itemize} 
+
+
+
+\section{Quellcode}
+Ab und an muss auch Quelltext gesetzt werden. Dies geschieht mit Hilfe des \texttt{listings}-Pakets\footnote{\texttt{http://texdoc.net/texmf-dist/doc/latex/listings/\\listings.pdf}}. Listing \ref{lst:example} zeigt ein Beispiel für ein "`floating"'-Listing.
+
+\begin{lstlisting}[float, caption=Beispiel eines Java-Listings, label=lst:example, language=java, basicstyle=\small, tabsize=4, showstringspaces=false, numbers=left, frame=single, keywordstyle=\bfseries]
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hallo Welt");
+	}
+}
+\end{lstlisting}
+
+\section{Abschnitt 8 (Blindtext)}
+\lipsum[5-10]
+
+\section{Abschnitt 9 (Blindtext)}
+\lipsum[11-20]
+
+\section{Abschnitt 10 (Blindtext)}
+\lipsum[21-30]
+
+\section{Abschnitt 11 (Blindtext)}
+\lipsum[31-32]
+
+\section{Related Work (Blindtext)}
+\lipsum[33-37]
+
+\section{Zusammenfassung (Blindtext)}
+\lipsum[42-44]
+
+%%%%%%%%%%%%%%%% Epilog-ANFANG
+% Die folgenden Zeilen zwischen Epilog-ANFANG und Epilog-ENDE bitte nicht ändern.
+
+% Neue Seite für das Literaturverzeichnis
+\newpage
+
+% Der voreingestellte BibTeX-Stil ist abbrv und sollte nicht geändert werden. Er führt dazu, dass die Quellenverweise durchnummeriert werden, was die Regel für wissenschaftliche Veröffentlichungen in den Naturwissenschaften ist.
+\bibliographystyle{abbrv}
+%%%%%%%%%%%%%%%% Epilog-ENDE
+
+% Verweis auf die BibTeX-Datei. Diese sollte im gleichen Ordner wie die tex-Datei liegen. ACHTUNG: Der Dateiname ist ohne die Endung .bib anzugeben.
+\bibliography{literatur}
+\end{document}

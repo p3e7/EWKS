@@ -35,12 +35,12 @@
 \begin{document}
 
 % Angabe des *englischen* Titels des Papers.
-% Bitte das Tag <TITEL DES ORIGINALS> entsprechend ersetzen.
-\title{<TITEL DES ORIGINALS>}
+% Bitte das Tag Approach to Define Highly Scalable Metamodels Based on JSON entsprechend ersetzen.
+\title{Approach to Define Highly Scalable Metamodels Based on JSON}
 
 % Als Untertitel sollte darauf hingewiesen werden, dass es sich um eine Zusammenfassung des Papers der jeweiligen Konferenz inkl. Jahrgang handelt.
-% Bitte das Tag <JAHRGANG> entsprechend ersetzen.
-\subtitle{Zusammenfassung des auf der <KONFERENZNAME> <JAHRGANG> veröffentlichten, gleichnamigen Papers}
+% Bitte das Tag 2015 entsprechend ersetzen.
+\subtitle{Zusammenfassung des auf der BigMDE 2015 veröffentlichten, gleichnamigen Papers}
 
 % Angaben zu den Autoren der *Zusammenfassung*.
 % Bitte die Tags <VORNAMEx>, <NAMEx>, <MATRIKELNRx>, <EMAILx> durch die eigenen Angaben ersetzen.
@@ -63,9 +63,13 @@
 \maketitle
 
 % Das Paper wie auch die Zusammenfassung gliedern sich in mehrere Abschnitte (\section-Befehl). Der erste Abschnitt sollte der Einleitung (Introduction) vorbehalten sein und eine Spalte nicht überschreiten.
-\section{Einleitung (Blindtext)}
-% Der folgende Befehl generiert Blindtext für die Einleitung und kann entfernt werden.
-\lipsum[1-4]
+\section{Einleitung}
+Das Paper Approach to Define Highly Scalable Metamodels Based on JSON \cite{gerhart2015approach} wurde im Rahmen der BigMDE 2015 veröffentlicht und es beinhaltet \textit{einen Ansatz} zur Speicherung von \textbf{D}omain-\textbf{S}pecific \textbf{M}odeling \textbf{L}anguages (DSML). DSMLs werden in der Softwareentwicklung eingesetzt, um verschiedene Diagramme in textueller Form abzubilden. Dabei geht es nicht um eine gut lesbare und verständliche Übersicht, sondern um die Generierung der Diagramme. Hierbei gibt es verschiedene Ansätze zur Generierung. So können die Diagramme beispielsweise direkt durch interpretierten Java Quellcode, spezielle \textit{@Annotationen} oder eine zusätzliche Sprache generiert werden\cite{france2005domain}. In der Vergangenheit wurde dafür oft auf XML zurückgegriffen. Für Softwareprojekte, die mit wenigen Klassen und Referenzen auf der Programmierebene auskommen ist dies unproblematisch. In großen Projekten ist die Anzahl der beiden Elemente aber unter Umständen so hoch, dass die angelegten XML-Dateien mehrere Gigabyte Speicher beanspruchen. Hier kommt ein weiterer Nachteil des XML-Formats zum tragen. Modelle können nur als Ganzes ausgelesen werden. \\
+Diese Limitierungen in der Skalierbarkeit können durch das JSON-Format verbessert und zum Teil sogar aufgehoben werden. Beispielsweise kann der Speicherbedarf durch einen geringeren Overhead im Quellcode reduziert werden und Modelle können über sogenannte \textit{Identifier} partiell geladen werden. \\
+Um die zuvor getroffenen Aussagen zu untermauern und die Vorteile des JSON-Formats faktisch darzustellen wird im Folgenden eine JSON-DSML-Implementierung beschrieben und in einem anschließenden Benchmark mit Ecore verglichen. \\
+\textit{Die Gliederung dieser Zusammenfassung orientiert sich am Originalpaper... \glqq So etwas ähnliches stand in beiden Positivbeispielen.\grqq} 
+\section{Related Work}
+
 
 \section{Hinweise zu den folgenden Abschnitten}
 Nach der Einleitung sollte in den folgenden Abschnitten der Inhalt des Papers vorgestellt werden. Die Einteilung der Abschnitte kann sich dabei am Paper orientieren.

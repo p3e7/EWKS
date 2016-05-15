@@ -2,3 +2,6 @@
 Paper-Zusammenfassung.log
 *.pdf
 Paper-Zusammenfassung.synctex.gz
+*.log
+Paper-Zusammenfassung.blg
+*.bbl

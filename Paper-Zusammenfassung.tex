@@ -11,9 +11,6 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-% Ohne dieses Package können keine eps Bilder angezeigt werden
-\usepackage{epstopdf}
-
 % Entfernung von für den Copyright-Hinweis der Konferenz reserviertem Platz in der ersten Spalte.
 \usepackage{etoolbox}
 \makeatletter
@@ -22,6 +19,41 @@
 
 % Anzahl der Autoren der Zusammenfassung (in diesem Semester zwei Studenten).
 \numberofauthors{2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zusätzlich benötigte Packages
+% Ohne dieses Package können keine eps Bilder angezeigt werden.
+\usepackage{epstopdf}
+%
+% Ohne Color kann der Text nicht eingefärbt werden.
+\usepackage{color}
+%
+% Ohne graphicx können keine Bilder eingebunden werden.
+\usepackage{graphicx}
+%
+% Ohne verbatim können keine Mehrzeiligen Kommentare genutzt werden.
+\usepackage{verbatim}
+%
+% Möglichkeit Bilder zu fixieren.
+\usepackage{float}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Command für TODOs 
+% Bsp:
+%	\todo{Muss gemacht werden!}{von Max}
+\newcommand{\todo}[2]{\textcolor{red}{\underline{\textbf{TODO [#1]}} \\ #2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Command für lstListings mit Code. Muss mit "\end{lstlisting}" beendet werden
+% Bsp:
+%	\lstlistingCode{Titel bzw. Beschriftung} 
+%	<QuellCode> 
+%	\end{lstlisting}
+\newcommand{\lstlistingCode}[1]{\begin{lstlisting}[caption=#1, label=lst:example, language=java, basicstyle=\small, tabsize=4,frame=single, showstringspaces=false, numbers=left, keywordstyle=\bfseries]}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%%%%%%%%%%%%%% Präambel-ENDE
 
@@ -63,12 +95,21 @@
 \maketitle
 
 % Das Paper wie auch die Zusammenfassung gliedern sich in mehrere Abschnitte (\section-Befehl). Der erste Abschnitt sollte der Einleitung (Introduction) vorbehalten sein und eine Spalte nicht überschreiten.
-\section{Einleitung}
-Das Paper Approach to Define Highly Scalable Metamodels Based on JSON \cite{gerhart2015approach} wurde im Rahmen der BigMDE 2015 veröffentlicht und es beinhaltet \textit{einen Ansatz} zur Speicherung von \textbf{D}omain-\textbf{S}pecific \textbf{M}odeling \textbf{L}anguages (DSML). DSMLs werden in der Softwareentwicklung eingesetzt, um verschiedene Diagramme in textueller Form abzubilden. Dabei geht es nicht um eine gut lesbare und verständliche Übersicht, sondern um die Generierung der Diagramme. Hierbei gibt es verschiedene Ansätze zur Generierung. So können die Diagramme beispielsweise direkt durch interpretierten Java Quellcode, spezielle \textit{@Annotationen} oder eine zusätzliche Sprache generiert werden\cite{france2005domain}. In der Vergangenheit wurde dafür oft auf XML zurückgegriffen. Für Softwareprojekte, die mit wenigen Klassen und Referenzen auf der Programmierebene auskommen ist dies unproblematisch. In großen Projekten ist die Anzahl der beiden Elemente aber unter Umständen so hoch, dass die angelegten XML-Dateien mehrere Gigabyte Speicher beanspruchen. Hier kommt ein weiterer Nachteil des XML-Formats zum tragen. Modelle können nur als Ganzes ausgelesen werden. \\
-Diese Limitierungen in der Skalierbarkeit können durch das JSON-Format verbessert und zum Teil sogar aufgehoben werden. Beispielsweise kann der Speicherbedarf durch einen geringeren Overhead im Quellcode reduziert werden und Modelle können über sogenannte \textit{Identifier} partiell geladen werden. \\
-Um die zuvor getroffenen Aussagen zu untermauern und die Vorteile des JSON-Formats faktisch darzustellen wird im Folgenden eine JSON-DSML-Implementierung beschrieben und in einem anschließenden Benchmark mit Ecore verglichen. \\
-\textit{Die Gliederung dieser Zusammenfassung orientiert sich am Originalpaper... \glqq So etwas ähnliches stand in beiden Positivbeispielen.\grqq} 
-\section{Related Work}
+
+
+\input{Abschnitte/sec-Einleitung}
+
+\input{Abschnitte/sec-Related-Work}
+
+\input{Abschnitte/sec-Vorgehensweise}
+
+\input{Abschnitte/sec-Evaluation}
+
+\input{Abschnitte/sec-Fazit-und-Ausblick}
+
+
+\pagebreak
+
 
 
 \section{Hinweise zu den folgenden Abschnitten}

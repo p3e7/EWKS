@@ -1,0 +1,32 @@
+\lstlistingCode{Family Tree Instanz}
+"846bc8a2-00fc-401f-b626-0b0252516aee": { 
+  "mClass": "Male", 
+  "outputs": { 
+    "isFather": 
+      ["8e9b1093-a589-4ae4-8e1e-1b3d63a3f842"], 
+    "isHusband": 
+      ["ee204744-6322-49d4-928e-1442e8bc70c4"] 
+  }, 
+  "inputs": { 
+    "isWife": 
+      ["666d4de7-e0f2-4620-8c19-d5469b40be1f"] 
+  }, 
+  "mAttributes": { 
+    "First_Name": ["Hans"], 
+    "SocialSecurityNumber": ["12"], 
+    "Birthday": ["12-02-2015"] 
+  } 
+}, 
+
+"ee204744-6322-49d4-928e-1442e8bc70c4": { 
+  "mRef": "isHusband", 
+  "source": { 
+    "Male": 
+      ["846bc8a2-00fc-401f-b626-0b0252516aee"] 
+  }, 
+  "target": { 
+    "Female": 
+      ["a264a43b-6f97-4257-9243-baddbf745490"] 
+  } 
+} 
+\end{lstlisting}

@@ -1,0 +1,22 @@
+\lstlistingCode{M\_Class Male aus dem Family Tree Beispiel}
+"Male": { 
+  "mType": "mClass", 
+  "name": "Male",
+  "superTypes": ["Person"], 
+  "mAttributes": [], 
+  "inputs": [{ 
+    "type": "isWife", 
+    "upperBound": 1, 
+    "lowerBound": 0 
+  }], 
+  "outputs": [{ 
+    "type": "isHusband", 
+    "upperBound": 1,
+    "lowerBound": 0 
+    },{ 
+    "type": "isFather", 
+    "upperBound": -1,
+    "lowerBound": 0
+  }] 
+}
+\end{lstlisting}

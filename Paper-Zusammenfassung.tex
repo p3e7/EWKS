@@ -43,7 +43,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Command für TODOs 
 % Bsp:
-%	\todo{Muss gemacht werden!}{von Max}
+%	\todo{<name>}{<was muss gemacht werden>}
 \newcommand{\todo}[2]{\textcolor{red}{\underline{\textbf{TODO [#1]}} \\ #2}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -53,7 +53,7 @@
 %	\lstlistingCode{Titel bzw. Beschriftung} 
 %	<QuellCode> 
 %	\end{lstlisting}
-\newcommand{\lstlistingCode}[1]{\begin{lstlisting}[caption=#1, label=lst:example, language=java, basicstyle=\small, tabsize=4,frame=single, showstringspaces=false, numbers=left, keywordstyle=\bfseries]}
+\newcommand{\lstlistingCode}[2]{\begin{lstlisting}[caption=#1, label=lst:#2, language=java, basicstyle=\small, tabsize=4,frame=single, showstringspaces=false, numbers=left, keywordstyle=\bfseries]}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -87,10 +87,10 @@
     \email{ps@fh-dortmund.de}    
 	% Zweiter Autor (diese Kommentarzeile nicht entfernen!)
 	\alignauthor
-	<Sascha> <D>\\
+	Sascha D\"upre\\
 	\affaddr{Fachhochschule Dortmund, Fachbereich Informatik}\\
-    \affaddr{<MATRIKELNR2>}\\
-    \email{<EMAIL2>@stud.fh-dortmund.de}    
+    \affaddr{7075071}\\
+    \email{saschad@stud.fh-dortmund.de}    
 }
 
 % Titel setzen. Dieser Befehl sollte an dieser Stelle belassen werden und vor dem eigentlichen Text auftauchen.
@@ -194,7 +194,6 @@ Formeln können auch in abgesetzter Form erscheinen, undzwar...
        \end{array} \right.
 \end{displaymath}
 \end{itemize} 
-
 
 
 \section{Quellcode}

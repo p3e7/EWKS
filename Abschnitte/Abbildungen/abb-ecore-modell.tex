@@ -1,0 +1,8 @@
+\begin{lstlisting}[caption=Auszug der Klasse Female aus Abbildung \ref{fig:Family-Tree-Model} als ECore in XML, label=lst:ecore-modell, language=xml, basicstyle=\small, tabsize=4,frame=single, showstringspaces=false, numbers=left, keywordstyle=\bfseries, breaklines=true]
+[...]
+  <eClassifiers xsi:type="ecore:EClass" name="Female" eSuperTypes="#//Person">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isWife" eType="#//Male"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isMother" upperBound="-1" eType="#//Person"/>
+  </eClassifiers>
+[...]
+\end{lstlisting}
